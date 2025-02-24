@@ -71,3 +71,6 @@ Overall, the Random Forest model demonstrated strong classification capabilities
 -   Fried chicken and sweet sauce-covered items were consistently high in sodium and sugar.
 - These findings indicate potential health risks, such as malnutrition, kidney failure and complications, that may be associated with the nutritional imbalances in these menus. 
 - The Random Forest model used to classify health risks showed high accuracy, indicating its potential as a useful tool in health risk analysis.
+ 
+Kindly check out details project on my portofolio: https://www.kaggle.com/datasets/joebeachcapital/fast-food
+You can find similar dataset in Kaggle: https://www.kaggle.com/datasets/joebeachcapital/fast-food
