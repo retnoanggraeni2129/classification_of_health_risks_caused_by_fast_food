@@ -72,6 +72,6 @@ Overall, the Random Forest model demonstrated strong classification capabilities
 - These findings indicate potential health risks, such as malnutrition, kidney failure and complications, that may be associated with the nutritional imbalances in these menus. 
 - The Random Forest model used to classify health risks showed high accuracy, indicating its potential as a useful tool in health risk analysis.
  
-#### Kindly check out details project on my portofolio: https://www.canva.com/design/DAGfgkETJZg/9FsBGa5q901x0RFYfIU7Ig/view?utm_content=DAGfgkETJZg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3fbbbd1d27
+#### Kindly check out details project on my portofolio: https://bit.ly/4lA4Zp6
 
 #### You can find similar dataset in Kaggle: https://www.kaggle.com/datasets/joebeachcapital/fast-food
