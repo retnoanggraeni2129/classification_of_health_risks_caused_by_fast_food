@@ -39,25 +39,39 @@ This project will analyze 516 menus from seven leading fast food restaurants, re
 1. handling text variables (item) using tf-idf
 2. performs label encoding for categorical data: 'restaurant', 'macro_nutrient', 'micro_nutrient', 'health_risk'
 3. standardize the data for all numeric data, except the index column
-4. combine the results of text handling with tf-idf, label encoding and standardization into a new dataframe called dfm.
+4. combine the results of text handling with nltk and string library.
+5. use pipeline for preprocessing and build model.
    
 # Feature Selection:
-Selected predictor variable (X): 'sugar', 'sodium', 'micro_nutrient', 'macro_nutrient', 'vector' (tf-idf result) and target variable (y): 'health_risk'
+Selected predictor variable (X): [['calories', 'cal_fat', 'total_fat', 'sat_fat', 'trans_fat', 'cholesterol', 'sodium', 'total_carb', 'fiber', 'sugar', 'protein', 'vit_a', 'vit_c', 'calcium', 'clean_text']]
+and target variable (y): 'health_risk'
 
 # Build Model Machine Learning
 For the classification of health risks caused by nutritional content in fast food, a random forest tree is used because it is resistant to data imbalance. However, this result is likely to change in the future due to periodic experiments and improvements.
 
 # Results Model
-Based on the accuracy results of the Random Forest model, it performed very well in classifying health risks, with an overall accuracy of 93.2%. Specifically:
-- High Accuracy: The model was able to predict “Malnutrition” and “Diabetes” with perfect accuracy (100%).
-- “Kidney Failure” and ‘Complicated’ predictions were also excellent, with precision and recall above 85%.
-- Average Performance: Similar macro avg and weighted avg values (93%) indicate that the model has a balanced performance across all health risk classes.
-Implications: 
-- The model is reliable for identifying health risks based on the trained data.
-- It is useful in applications where accurate health risk classification is essential, such as in health data analysis or the development of medical decision support systems.
-- The model is particularly good at predicting the “Malnutrition” and “Diabetes” categories.
-- It also did very well in predicting the “Kidney Failure” and “Complicated” categories, although not as well as the previous two categories.
-Overall, the Random Forest model demonstrated strong classification capabilities and can be a valuable tool in health risk analysis.
+1. Classification Report Results (single test set)
+Accuracy: 0.98058 (≈ 98%) → The model was able to correctly classify 98% of the total 103 samples.
+
+Per class:
+Complicated: Precision, recall, f1 = 0.96 → The model is quite good at recognizing this class, although there are still a few errors (4%).
+Diabetes: Precision, recall, f1 = 1.00 → The model is always correct when predicting this class, with no errors (perfect prediction).
+Kidney Failure: Precision, recall, f1 = 0.96 → Same as “Complicated”, very good performance with few errors.
+Malnutrition: Precision, recall, f1 = 1.00 → Perfect prediction for this class.
+Macro avg (0.98) → Average performance across classes is balanced, no class is neglected.
+Weighted avg (0.98) → When considering the amount of data in each class, the model remains very consistent.
+
+👉 Conclusion: The model is very good, there is no significant bias between classes, and it has good balance.
+
+2. Cross Validation Results
+
+Cross-validated accuracies: [0.951, 0.961, 0.961, 0.990, 0.980]
+Accuracy values are consistently high, ranging from 95% to 99%.
+Mean accuracy: 0.969 (≈ 97%) → The average model performance is very stable.
+Std dev: 0.014 (≈ 1.4%) → Small variation between folds → the model is stable and not overfitting.
+Precision (weighted): 0.97, Recall (weighted): 0.969, F1 (weighted): 0.969 → All metrics are balanced, meaning that the model is not only good at detecting positives, but also consistent in all aspects of evaluation.
+
+👉 Cross-validation conclusion: The model has excellent generalization because its performance is consistent across various data subsets, not just on a single test dataset.
 
 # Summary
 - This data analysis provides a comprehensive overview of the nutritional profile and potential health risks of fast food menus at several popular restaurants.
